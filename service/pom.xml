@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!--    <parent>-->
+<!--        <artifactId>demo</artifactId>-->
+<!--        <groupId>org.example</groupId>-->
+<!--        <version>1.0-SNAPSHOT</version>-->
+<!--    </parent>-->
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>service</artifactId>
+    <!-- 父级项目 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.9.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <!-- 属性设置 -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding><!-- 编译字符编码为utf-8 -->
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding><!-- 输出字符编码为UTF-8  -->
+        <java.version>1.8</java.version><!-- jdK版本 -->
+    </properties>
+
+    <!-- 依赖关系 -->
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+
+        <!-- 测试 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- springmvc -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- jpa(持久层) -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-data-jpa</artifactId>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; mysql(数据库) &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>mysql</groupId>-->
+<!--            <artifactId>mysql-connector-java</artifactId>-->
+<!--            <scope>runtime</scope>-->
+<!--        </dependency>-->
+
+    </dependencies>
+
+    <!-- 编译 -->
+    <build>
+        <!-- 插件 -->
+        <plugins>
+            <!-- maven插件 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
